@@ -29,4 +29,25 @@ int main()
     std::cout << '\n';
 
     return 0;
+    
+    // Завдання 2
+
+    int main() {
+    std::vector<int> V0 = { 1, 2, 3 };
+    int N = 3;
+    std::vector<std::vector<int>> V = { {1, 2, 3}, {2, 3, 4}, {1, 2, 3, 4} };
+
+    int count = 0;
+    std::vector<int> setV0(V0.begin(), V0.end());
+    for (int i = 0; i < N; i++) {
+        std::vector<int> setVI(V[i].begin(), V[i].end());
+        if (std::includes(setVI.begin(), setVI.end(), setV0.begin(), setV0.end())) {
+            count++;
+        }
+    }
+
+    std::cout << count << std::endl;
+
+    return 0;
+
 }
